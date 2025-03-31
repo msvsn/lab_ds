@@ -37,18 +37,19 @@ public class Level2 extends Level1 {
                 if (newOperator.compareTo(currentOperator) < 0) {
                     if (current.left == null) {
                         current.left = newNode;
+                        root = rotateRight(root);
                         break;
                     }
                     current = current.left;
                 } else {
                     if (current.right == null) {
                         current.right = newNode;
+                        root = rotateLeft(root);
                         break;
                     }
                     current = current.right;
                 }
             }
-            root = rotateLeft(root);
         }
     }
 
